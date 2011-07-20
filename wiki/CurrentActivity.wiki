@@ -1,0 +1,7 @@
+#Current Activities.
+
+= Busy with =
+
+  # Still trying to clean up the code. 
+  # I am not sure about including Jython and JTOpen in the war file. Will have to check the license implications thereof. 
+  # Must still create a make file installer for the RPGLE code
