@@ -15,7 +15,7 @@
 001500110719      * ------------------------------------------------------------------------------
 001600110720     HBndDir('WEBTOOLS': 'RPGSERVE')
 001700070703
-001800110718     Dmain             PR                  EXTPGM('RDGATE')
+001800110718     Dmain             PR                  EXTPGM('WEBRPGSERV')
 001900110718     D                                1a   options(*varsize)
 002000110718     D                                1a   options(*varsize)
 002100110718     D                                1a   options(*varsize)
