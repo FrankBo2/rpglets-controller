@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iSeriesProjectMetaData version="5.0">
+<properties com.ibm.etools.iseries.perspective.connection-name="isd" com.ibm.etools.iseries.perspective.host-name="ISD" com.ibm.etools.iseries.perspective.profile-name="rondlomo">
+<cachedProperties/>
+</properties>
+<isvproperties>
+<cachedProperties/>
+</isvproperties>
+</iSeriesProjectMetaData>
