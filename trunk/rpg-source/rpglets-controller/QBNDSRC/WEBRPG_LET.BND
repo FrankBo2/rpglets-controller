@@ -1,11 +1,26 @@
-000116110721
-000200000000
-000201110721STRPGMEXP PGMLVL(*CURRENT) SIGNATURE('Web Utils 1.0.0')
-000300110718    EXPORT SYMBOL('RPGLET_printString')
-000400110718    EXPORT SYMBOL('RPGLET_setConfig')
-000500110718    EXPORT SYMBOL('RPGLET_setContentType')
-000600110718    EXPORT SYMBOL('RPGLET_setOutputStream')
-000700110718    EXPORT SYMBOL('RPGLET_propertiesFromString')
-000800110720    EXPORT SYMBOL('RPGLET_propertiesToString')
-000900000000
-001000000000ENDPGMEXP
+000100110721     /*
+000200110721         Copyright 2009 Ronnie Dlomo
+000300110721
+000400110721         Licensed under the Apache License, Version 2.0 (the "License");
+000500110721         you may not use this file except in compliance with the License.
+000600110721         You may obtain a copy of the License at
+000700110721
+000800110721             http://www.apache.org/licenses/LICENSE-2.0
+000900110721
+001000110721         Unless required by applicable law or agreed to in writing, software
+001100110721         distributed under the License is distributed on an "AS IS" BASIS,
+001200110721         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied
+001300110721         See the License for the specific language governing permissions and
+001400110721         limitations under the License.
+001500110721      */
+001600110721
+001700110718STRPGMEXP PGMLVL(*CURRENT) SIGNATURE('Web Utils 1.0.0')
+001800000000
+001900110718    EXPORT SYMBOL('RPGLET_printString')
+002000110718    EXPORT SYMBOL('RPGLET_setConfig')
+002100110718    EXPORT SYMBOL('RPGLET_setContentType')
+002200110718    EXPORT SYMBOL('RPGLET_setOutputStream')
+002300110718    EXPORT SYMBOL('RPGLET_propertiesFromString')
+002400110720    EXPORT SYMBOL('RPGLET_propertiesToString')
+002500000000
+002600000000ENDPGMEXP
