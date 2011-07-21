@@ -27,12 +27,13 @@
 002700110720
 002800110720      /define SERVER_RPGLET
 002900070704
+003000110717     d/copy arraylisth
 003100110718     d/copy SYSPSDS
 003200110720     D/copy WEBRPG_H
 003300110719
-003400110721      /include $(general_include}/libc_h.rpgle
-003500110721      /include $(properties_include)/properties_h.rpgle
-003600110721      /include $(arraylist_include)/arraylist_h.rpgle
+003400110720      /include /home/ronnie/includes/libc_h.rpgle
+003500110720      /include /home/ronnie/properties/properties_h.rpgle
+003600110719      /include /home/ronnie/arraylist/arraylist_h.rpgle
 003700070703
 003800110717     DfromString       PR              *
 003900110717     D buffer                          *      const
@@ -88,36 +89,43 @@
 008900110717           Monitor;
 009000110717               RpgevLet( input_properties: @output : config_properties);
 009100110718               properties_put(config_properties: 'STATUS': 'SUCCESS');
-009200110718               properties_put(config_properties: 'STATE' : MYPSDS );
-009300110717           On-Error;
+009200110717           On-Error;
+009300110721              properties_put(config_properties: 'STATUS': 'FAIL');
 009400110718              ExSR errorStatus;
-009500110718              properties_put(config_properties: 'MESSAGE':
-009600110718                            'No Target RPGLET Specified in the Request');
-009700110717           EndMon;
-009800110717        Else;
-009900110718              ExSR errorStatus;
+009500110717           EndMon;
+009600110717        Else;
+009700110721              properties_put(config_properties: 'MESSAGE':
+009800110721                            'No Target RPGLET Specified in the Request');
+009900110721              ExSR errorStatus;
 010000110717        EndIf;
 010100110719
 010200110719        // update serialized config attributes
-010300110719        @properties  =  RPGLET_propertiesToString(config_properties);
-010400110719        memcpy(%Addr(pConfig) : @properties : %len(%str(@properties)) );
-010500110717
-010600110717        *INLR = *On;
-010700070703        return;
-010800110719        // * ========================================================= * //
-010900110719        //      Experimental
-011000110719        // * ========================================================= * //
-011100070704        BegSr *pssr;
-011200110718          *INLR = *On;
-011300110718          ExSr errorStatus;
-011400110718          Return;
-011500070704        EndSr;
-011600110719
-011700110718        BegSr errorStatus;
-011800110718          monitor;
-011900110718             properties_put(config_properties: 'STATUS': 'FAIL');
-012000110718             properties_put(config_properties: 'STATE' : 'MYPSDS');
-012100110718          on-error;
-012200110718          EndMon;
-012300110718        EndSr;
-012400070703      /End-free
+010300110721        ExSr  refreshCongig;
+010400110721        //@properties  =  RPGLET_propertiesToString(config_properties);
+010500110721        //memcpy(%Addr(pConfig) : @properties : %len(%str(@properties)) );
+010600110717
+010700110717        *INLR = *On;
+010800070703        return;
+010900110719        // * ========================================================= * //
+011000110721        //      Experimental Will change into sub procs just lazy
+011100110719        // * ========================================================= * //
+011200110721        BegSr refreshCongig;
+011300110721         // update serialized config attributes
+011400110721         @properties  =  RPGLET_propertiesToString(config_properties);
+011500110721         memcpy(%Addr(pConfig) : @properties : %len(%str(@properties)) );
+011600110721        EndSr;
+011700110721
+011800070704        BegSr *pssr;
+011900110718          *INLR = *On;
+012000110721          properties_put(config_properties: 'STATUS': 'FAIL');
+012100110718          ExSr errorStatus;
+012200110718          Return;
+012300070704        EndSr;
+012400110719
+012500110718        BegSr errorStatus;
+012600110718          monitor;
+012700110721             properties_put(config_properties: 'STATE' : MYPSDS );
+012800110718          on-error;
+012900110718          EndMon;
+013000110718        EndSr;
+013100070703      /End-free
