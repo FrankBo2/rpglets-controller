@@ -27,13 +27,12 @@
 002700110720
 002800110720      /define SERVER_RPGLET
 002900070704
-003000110717     d/copy arraylisth
 003100110718     d/copy SYSPSDS
 003200110720     D/copy WEBRPG_H
 003300110719
-003400110720      /include /home/ronnie/includes/libc_h.rpgle
-003500110720      /include /home/ronnie/properties/properties_h.rpgle
-003600110719      /include /home/ronnie/arraylist/arraylist_h.rpgle
+003400110721      /include $(general_include}/libc_h.rpgle
+003500110721      /include $(properties_include)/properties_h.rpgle
+003600110721      /include $(arraylist_include)/arraylist_h.rpgle
 003700070703
 003800110717     DfromString       PR              *
 003900110717     D buffer                          *      const
