@@ -8,15 +8,15 @@ Once The servlet container is started. Using a deploy manager download and insta
 
 After this is done you should be able to get an error page response using the follwing request from your favourite browser. http://youriseries:port:/rpgcontext.py. This will tell you that you have successfully installed the web app correctly.
 
-Now download and save the webobjs.savf onto a folder on your IfS folder. Then on a 5250 session enter the following commands to extract the objects stored in the save files
+Now download and save the webobjs.savf onto a folder on your IfS folder( _your_ifs_folder_). Then on a 5250 session enter the following commands to extract the objects stored in the save files
 
- *# CRTLIB RPGLETLIB*
+ *# CRTLIB LIB(RPGLETLIB)*
 
- *# CPYFRMSTMF FROMSTMF('/your_ifs_library/webobjs.savf') TOMBR('/qsys.lib/RPGLETLIB.lib/WEBLETSAV.FILE')*
+ *# CPYFRMSTMF FROMSTMF('/your_ifs_folder/webobjs.savf') TOMBR('/qsys.lib/RPGLETLIB.lib/WEBLETSAV.FILE')*
 
- At this point you can take a peek at the save file to see what objects are contained inside using the DSPSAVF RPGLETLIB/WEBLETSAV
+ At this point you can take a peek at the save file to see what objects are contained inside using the *DSPSAVF RPGLETLIB/WEBLETSAV*
 
-Restore all the saved objects into our created library 
+Restore all the saved objects in the save file into our created library 
 
 *RSTOBJ OBJ(*ALL) SAVLIB(APILIB) DEV(*SAVF) SAVF(RPGLETLIB/WEBLETSAV) RSTLIB(RPGLETLIB)*
   
