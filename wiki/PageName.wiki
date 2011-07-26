@@ -1,6 +1,6 @@
 #summary Installation guide for the current experimental release...
 
-= Introduction =
+= Installation =
 
 Please down load and install a servlet container 2.4+ and install it on your System I 
 I have successfully ran on Tomcat 6.0.16, Jetty 7.0 and IBM Websphere 6.1. )
