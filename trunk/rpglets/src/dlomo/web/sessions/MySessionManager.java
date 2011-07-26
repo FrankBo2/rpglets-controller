@@ -124,7 +124,7 @@ public final class MySessionManager implements ServletContextListener, ServletCo
     public void sessionCreated(HttpSessionEvent arg0) {
 		try {
 		//as400 = new AS400("localhost", "*CURRENT", "*CURRENT");
-		as400 = new AS400("isd", "auxprd", "auxprd");	
+		as400 = new AS400("LOCALHOST", "*CURRENT", "*CURRENT");	
 		as400.connectService(AS400.COMMAND);
 		connectionFound = true;
 		msg = "connection ok";
