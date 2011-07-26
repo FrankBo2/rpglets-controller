@@ -2,9 +2,9 @@
 
 = Installation =
 
-Please down load and install a servlet container 2.4+ and install it on your System I 
-I have successfully ran on Tomcat 6.0.16, Jetty 7.0 and IBM Websphere 6.1. )
-Once The servlet container is started. Using a deploy manager download and install rpglets.war into the container.
+Please down load and install a servlet container 2.4+ and install it on your System-I.   
+I have successfully installed and ran it on the following servers Tomcat 6.0.16, Jetty 7.0 and IBM Websphere 6.1. )
+Once The servlet container is started. Using a Deploy manager download and install rpglets.war into the container.
 
 After this is done you should be able to get an error page response using the follwing request from your favourite browser. http://youriseries:port:/rpgcontext.py. This will tell you that you have successfully installed the web app correctly.
 
