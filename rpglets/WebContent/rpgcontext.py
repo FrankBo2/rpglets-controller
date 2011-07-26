@@ -7,9 +7,8 @@ import java
 import javax
 import tempfile
 import traceback
-#import gateway
-import logging
-
+import gateway
+reload(gateway)
 from gateway import *
 
 from java.io import File
@@ -55,13 +54,7 @@ def handleError(claz, exc, trcback, response):
         if global_LOG: print >>global_LOG_FILE, '====> dictionary items <===', exc.__dict__
         exc_args = exc.__dict__.get('args', '')
         print >>outstream, "<h4>arguments :<i>", exc_args,"</i></h6>"             
-
-#def logTrace(msg):
-#    logging.warn("testing warning" + msg)
-#    logging.error("testing error" + msg)
-#    logging.exception("testing exception" + msg)
-#    logging.info("mesaage" + msg )
-    
+  
     
 class Dummy:
     def __init__(self):
@@ -118,7 +111,7 @@ class rpgcontext(javax.servlet.http.HttpServlet ):
         if global_LOG: print >>global_LOG_FILE, 'have connection', self.connection
         input = self.getInputData(request)        
         cmd = CommandCall(self.connection)        
-        cmd.run('ADDLIBLE APILIB')
+        cmd.run('ADDLIBLE RPGLETLIB')
         if global_LOG: print >>global_LOG_FILE, 'did command ', self.connection
         self.controll.setProperty('SERVER_JOB', cmd.getServerJob().toString() );
         #response.setHeader('server-job', cmd.getServerJob().toString())        

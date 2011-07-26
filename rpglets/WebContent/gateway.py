@@ -86,7 +86,7 @@ class GateWay:
         programOutput = ProgramParameter(output.getBytes(Parameter.OUTPUT_SIZE),ProgramParameter.PASS_BY_REFERENCE);
         pgmControl = ProgramParameter(self.control.getBytes(Parameter.DEFAULT_SIZE), ProgramParameter.PASS_BY_REFERENCE);
         parameterList = array.array(ProgramParameter, [pgmInput, programOutput, pgmControl])        
-        
+        self.error = 0
         pgm.setProgram(programName.getPath(), parameterList);
         print  '<br> Remote Job strting' , pgm.serverJob
         ok = pgm.run()                
