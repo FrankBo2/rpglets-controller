@@ -23,6 +23,9 @@ Restore all the saved objects in the save file into our created library
 You should have the following objects
 
 {{{
+
+
+
 WEBRPG_LET  *SRVPGM   RPGLE       QPGMR               368  YES
 PROPERTIES  *SRVPGM   RPGLE       QPGMR               440  YES
 ARRAYLIST   *SRVPGM   RPGLE       QPGMR              1020  YES
@@ -35,5 +38,7 @@ RPGSERVE    *BNDDIR               QPGMR                 8  YES
 WEBTOOLS    *BNDDIR               QPGMR                 8  YES
 JSON        *BNDDIR               QPGMR                 8  YES
 }}}
+
+Check that all the binding directory entries are pointing to the correct  library "RPGLETLIB"
 
 You can now try the Hello World Example on the project home and compile it
